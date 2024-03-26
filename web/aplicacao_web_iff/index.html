@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Nomes</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    input[type="text"] {
+        padding: 5px;
+        width: 200px;
+    }
+    button {
+        padding: 5px 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<h1>Lista de Nomes</h1>
+<input type="text" id="nomeInput" placeholder="Digite um nome">
+<button onclick="adicionarNome()">Adicionar</button>
+<ul id="listaNomes"></ul>
+
+<script>
+    // Array para armazenar os nomes
+    let nomes = [];
+
+    // Função para adicionar um nome à lista
+    function adicionarNome() {
+        // Obtém o valor do input
+        let nome = document.getElementById("nomeInput").value;
+
+        // Verifica se o nome não está vazio
+        if (nome !== "") {
+            // Adiciona o nome ao array
+            nomes.push(nome);
+
+            // Limpa o input
+            document.getElementById("nomeInput").value = "";
+
+            // Chama a função para exibir a lista atualizada
+            exibirListaNomes();
+        } else {
+            alert("Por favor, digite um nome válido.");
+        }
+    }
+
+    // Função para exibir a lista de nomes na página
+    function exibirListaNomes() {
+        // Obtém o elemento UL onde os nomes serão exibidos
+        let lista = document.getElementById("listaNomes");
+        // Limpa o conteúdo atual da lista
+        lista.innerHTML = "";
+
+        // Itera sobre o array de nomes e cria um elemento LI para cada nome
+        for (let i = 0; i < nomes.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = nomes[i];
+            lista.appendChild(li);
+        }
+    }
+</script>
+</body>
+</html>

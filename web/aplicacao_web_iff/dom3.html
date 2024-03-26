@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trocar Cores</title>
+<style>
+    body {
+        transition: background-color 0.5s;
+    }
+    .cor-1 {
+        background-color: #ffcc00;
+    }
+    .cor-2 {
+        background-color: #66ccff;
+    }
+</style>
+</head>
+<body class="cor-1">
+<h1>Trocar Cores</h1>
+<button onclick="trocarCor()">Trocar Cor</button>
+
+<script>
+    function trocarCor() {
+        const body = document.body;
+        body.classList.toggle('cor-1');
+        body.classList.toggle('cor-2');
+    }
+</script>
+</body>
+</html>

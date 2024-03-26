@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  #imageInput {
+    margin-bottom: 20px;
+  }
+  
+  #imagePreview {
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,22 @@
+#studentInfo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  #studentInfo h2 {
+    margin-bottom: 10px;
+  }
+  
+  #studentInfo p {
+    margin-bottom: 5px;
+  }
+  
+  #studentInfo strong {
+    font-weight: bold;
+  }
+  
+  #studentInfo span {
+    color: #555;
+  }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <style>
+        /* Estilos opcionais */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tela de Login</h2>
+    <input type="text" id="username" placeholder="Usuário">
+    <input type="password" id="password" placeholder="Senha">
+    <button onclick="validarLogin()">Entrar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function validarLogin() {
+            var usuario = document.getElementById('username').value;
+            var senha = document.getElementById('password').value;
+
+            // Verifica se o usuário e a senha são válidos
+            if (usuario === 'admin' && senha === '1234') {
+                document.getElementById('resultado').innerHTML = "Login bem-sucedido!";
+            } else {
+                document.getElementById('resultado').innerHTML = "Usuário ou senha incorretos.";
+            }
+        }
+    </script>
+</body>
+</html>

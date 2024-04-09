@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <input type="text" id="itemInput">
+    <button onclick="adicionarItem()">Adicionar</button>
+    <ul id="listaCompras">
+        <li>Tenis<button>Remover</button></li>
+        <li>Sapato<button>Remover</button></li>
+    </ul>
+    
+    
+
+    <script>
+        let itens = [];
+
+        function adicionarItem() {
+            const input = document.getElementById('itemInput');
+            const item = input.value;
+            itens.push(item);
+            input.value = '';
+            mostrarItens();
+        }
+
+        function removerItem(index) {
+            itens.splice(index, 1);
+            mostrarItens();
+        }
+
+        function mostrarItens() {
+            const lista = document.getElementById('listaCompras');
+            lista.innerHTML = '';
+            itens.forEach((item, index) => {
+                const itemLista = document.createElement('li');
+                itemLista.textContent = item;
+                const botaoRemover = document.createElement('button');
+                botaoRemover.textContent = 'Remover';
+                botaoRemover.addEventListener('click', () => removerItem(index));
+                itemLista.appendChild(botaoRemover);
+                lista.appendChild(itemLista);
+            });
+        }
+    </script>
+</body>
+</html>
+
+for i in [1,2,3]
+  print (i + 2)

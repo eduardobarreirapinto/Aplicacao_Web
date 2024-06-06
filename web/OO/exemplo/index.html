@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras Geométricas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Figuras Geométricas</h1>
+    
+    <div id="controls">
+        <label for="shapeType">Tipo de Figura:</label>
+        <select id="shapeType">
+            <option value="circle">Círculo</option>
+            <option value="square">Quadrado</option>
+        </select>
+        <button onclick="addShape()">Adicionar Figura</button>
+    </div>
+
+    <div id="canvas"></div>
+    <div id="info"></div>
+
+    <script src="shapes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

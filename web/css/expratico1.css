@@ -1,0 +1,11 @@
+h1 {
+    color: blue;
+    font-size: 36px;
+    text-align: center;
+}
+
+p {
+    font-family:'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #333;
+}

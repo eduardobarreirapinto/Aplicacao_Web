@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Exemplo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            max-width: 1000px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- é uma tag HTML5 que é usada para desenhar gráficos, gráficos, imagens e outros gráficos em tempo real usando JavaScript.  -->
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // Dados do gráfico
+        var data = {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
+            datasets: [{
+                label: "Vendas",
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 2,
+                data: [65, 59, 80, 81, 56]
+            }]
+        };
+
+        // Configurações do gráfico
+        //scales: Este objeto define as escalas utilizadas no gráfico. No exemplo fornecido, apenas o eixo Y (yAxes) é configurado.
+        //yAxes: Dentro do objeto scales, yAxes especifica as configurações específicas para o eixo Y.
+        //ticks: Define as opções relacionadas aos rótulos dos ticks no eixo Y.
+        //beginAtZero: Esta configuração é um booleano que determina se o eixo Y deve começar em zero (true) ou se pode começar em um valor diferente de zero (false). No exemplo fornecido, está configurado como true, o que significa que o eixo Y começará em zero.
+        var options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Criação do gráfico
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+</html>

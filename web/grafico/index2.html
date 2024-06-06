@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Exemplo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="index2.css">
+</head>
+<body>
+    <label for="mes1">Janeiro:</label>
+    <input type="number" id="mes1" value="65"><br>
+
+    <label for="mes2">Fevereiro:</label>
+    <input type="number" id="mes2" value="59"><br>
+
+    <label for="mes3">Março:</label>
+    <input type="number" id="mes3" value="80"><br>
+
+    <label for="mes4">Abril:</label>
+    <input type="number" id="mes4" value="81"><br>
+
+    <label for="mes5">Maio:</label>
+    <input type="number" id="mes5" value="56"><br>
+
+    <button onclick="updateChart()">Atualizar Gráfico</button>
+    
+    <canvas id="myChart"></canvas>
+
+    <script>
+        function updateChart() {
+            var mes1 = parseInt(document.getElementById('mes1').value);
+            var mes2 = parseInt(document.getElementById('mes2').value);
+            var mes3 = parseInt(document.getElementById('mes3').value);
+            var mes4 = parseInt(document.getElementById('mes4').value);
+            var mes5 = parseInt(document.getElementById('mes5').value);
+
+            myChart.data.datasets[0].data = [mes1, mes2, mes3, mes4, mes5];
+            myChart.update();
+        }
+
+        // Configurações do gráfico
+        var options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Criação do gráfico
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
+                datasets: [{
+                    label: "Vendas",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    borderWidth: 1,
+                    data: [65, 59, 80, 81, 56]
+                }]
+            },
+            options: options
+        });
+    </script>
+</body>
+</html>

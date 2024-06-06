@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Regressivo</title>
+    <style>
+        /* Estilos opcionais */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Contador Regressivo</h2>
+    <label for="inicio">Número Inicial:</label>
+    <input type="number" id="inicio" placeholder="Digite um número"><br>
+    <button onclick="iniciarContador()">Iniciar Contagem</button>
+    <div id="contador"></div>
+
+    <script>
+        function iniciarContador() {
+            let inicio = parseInt(document.getElementById('inicio').value);
+            let contador = document.getElementById('contador');
+            contador.innerHTML = "";
+
+            while (inicio >= 0) {
+                contador.innerHTML += `<p>${inicio}</p>`;
+                inicio--;
+                //inicio= inicio - 1;
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- function contar() {
+    if (inicio >= 0) {
+        contador.innerHTML += `<p>${inicio}</p>`;
+        inicio--;
+        setTimeout(contar, 1000); // Chama a função novamente após um segundo
+    }
+}
+
+contar(); // Inicia a contagem -->

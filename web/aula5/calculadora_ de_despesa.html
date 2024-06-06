@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Despesas</title>
+</head>
+<body>
+  <h2>Calculadora de Despesas</h2>
+  <input type="text" id="descricao" placeholder="Descrição">
+  <input type="number" id="valor" placeholder="Valor">
+  <button onclick="cadastrarDespesa()">Cadastrar</button>
+  <div id="total"></div>
+
+  <script>
+    let despesas = [{ Descricao: null, Valor: 9 },{ Descricao: null, Valor: 12 }];
+
+    function cadastrarDespesa() {
+      let descricao = document.getElementById('descricao').value;
+      let valor = document.getElementById('valor').value;
+      despesas.push({ Descricao: descricao, Valor: valor });
+      exibirTotalDespesas();
+    }
+
+    function calcularTotalDespesas() {
+      let total = 0;
+      for (let i = 0; i < despesas.length; i++) {
+        total += Number(despesas[i].Valor);
+      }
+      return total;
+    }
+
+    function exibirTotalDespesas() {
+      let totalElement = document.getElementById('total');
+      totalElement.innerHTML = `<p>Total das Despesas: R$ ${calcularTotalDespesas().toFixed(2)}</p>`;
+    }
+  </script>
+</body>
+</html>

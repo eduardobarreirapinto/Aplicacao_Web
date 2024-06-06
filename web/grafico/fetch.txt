@@ -1,0 +1,35 @@
+fetch:
+O fetch é uma função nativa do JavaScript que é usada para fazer requisições HTTP. 
+Ele é usado para buscar recursos de uma rede (geralmente uma API ou um arquivo), de forma assíncrona, retornando uma Promise.
+
+Sintaxe básica:
+
+        fetch(url)
+        .then(response => {
+            // manipular a resposta
+        })
+        .catch(error => {
+            // tratar erros
+        });
+Onde:
+
+url: É a URL do recurso que você deseja buscar.
+response: É o objeto que representa a resposta da requisição HTTP.
+
+then:
+O método then é usado para encadear operações assíncronas em uma Promise. 
+Ele é chamado após o fetch, recebendo uma função de retorno de chamada que é executada quando a Promise é resolvida (ou seja, quando a requisição é bem-sucedida).
+
+
+fetch(url)
+  .then(response => {
+    // manipular a resposta
+  })
+  .then(data => {
+    // fazer algo com os dados
+  })
+  .catch(error => {
+    // tratar erros
+  });
+Dentro do bloco de código passado para o then, você pode manipular a resposta da requisição, como analisar um JSON, extrair informações ou atualizar o conteúdo da página com base nos dados recebidos.
+

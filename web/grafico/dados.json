@@ -1,0 +1,10 @@
+{
+    "dados": [
+      {"mes": "Janeiro", "sales": 65},
+      {"mes": "Fevereiro", "sales": 59},
+      {"mes": "Março", "sales": 80},
+      {"mes": "Abril", "sales": 81},
+      {"mes": "Maio", "sales": 56}
+    ]
+  }
+  

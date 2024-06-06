@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+/* Media query para ajustar o tamanho das imagens em telas menores */
+@media screen and (max-width: 768px) {
+    .gallery img {
+        width: 150px;
+    }
+}
+
+/* Media query para ajustar o layout da galeria em telas muito pequenas */
+@media screen and (max-width: 480px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery img {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+/* Essas regras de mídia permitem que a galeria de fotos se ajuste não apenas ao tamanho da tela, mas também ao tamanho específico do dispositivo. 
+Por exemplo, em dispositivos com largura de tela menor que 768 pixels, o tamanho das imagens será reduzido para 150 pixels de largura. 
+Em dispositivos com largura de tela menor que 480 pixels, a galeria mudará para um layout de coluna única, centralizando as imagens e ajustando sua largura para preencher a maioria da largura da tela.*/
+
+
+
+
+
+
+
+
+

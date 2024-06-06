@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Exemplo</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            max-width: 800px ;
+            height: 800px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // Função para carregar dados do arquivo JSON e criar o gráfico
+        //o fetch é usado para carregar o arquivo de dados JSON (ou texto) da URL especificada, 
+        //e o then é usado para manipular os dados quando a Promise é resolvida, ou seja, quando o arquivo é carregado com sucesso.
+        function carregarDadosEAtualizarGrafico() {
+            fetch('dados.json')
+                .then(response => response.text())
+                .then(text => {
+                    var data = JSON.parse(text);
+                    var labels = [];
+                    var salesData = [];
+                    data.dados.forEach(item => {
+                        labels.push(item.mes);
+                        salesData.push(item.sales);
+                    });
+                    criarGrafico(labels, salesData);
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar dados do arquivo JSON:', error);
+                });
+        }
+
+        // Função para criar o gráfico com os dados
+        function criarGrafico(labels, data) {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Vendas",
+                        backgroundColor: "rgba(75, 192, 192, 0.2)",
+                        borderColor: "rgba(75, 192, 192, 1)",
+                        borderWidth: 1,
+                        data: data
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+        // Carregar dados do arquivo JSON e criar o gráfico ao carregar a página
+        carregarDadosEAtualizarGrafico();
+    </script>
+</body>
+</html>

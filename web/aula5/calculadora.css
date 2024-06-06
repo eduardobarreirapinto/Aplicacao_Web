@@ -1,0 +1,27 @@
+.calculadora {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input[type="number"], select {
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4565a0;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 20px;
+}

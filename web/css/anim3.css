@@ -1,0 +1,15 @@
+.fade-box {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    animation: fade 5s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

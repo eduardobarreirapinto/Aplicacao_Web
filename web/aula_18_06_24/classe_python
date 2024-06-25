@@ -1,0 +1,61 @@
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def get_info(self):
+        return f"Product: {self.name}, Price: {self.price:.2f}"
+
+# Exemplo de uso:
+# prod = Product("Laptop", 1500.00)
+# print(prod.get_info())
+
+# customer.py
+
+class Customer:
+    def __init__(self, name):
+        self.name = name
+        self.cart = []
+
+    def add_to_cart(self, product):
+        self.cart.append(product)
+
+    def view_cart(self):
+        if not self.cart:
+            return "Cart is empty."
+        cart_info = [product.get_info() for product in self.cart]
+        return "\n".join(cart_info)
+
+# Exemplo de uso:
+# cust = Customer("Alice")
+# prod = Product("Laptop", 1500.00)
+# cust.add_to_cart(prod)
+# print(cust.view_cart())
+
+# main.py
+
+from product import Product
+from customer import Customer
+
+def main():
+    # Criação de produtos
+    product1 = Product("Laptop", 1500.00)
+    product2 = Product("Smartphone", 800.00)
+    product3 = Product("Headphones", 150.00)
+
+    # Criação de um cliente
+    customer = Customer("Alice")
+
+    # Adicionar produtos ao carrinho do cliente
+    customer.add_to_cart(product1)
+    customer.add_to_cart(product2)
+    customer.add_to_cart(product3)
+
+    # Visualizar o carrinho
+    print(f"Customer: {customer.name}")
+    print("Cart Contents:")
+    print(customer.view_cart())
+
+if __name__ == "__main__":
+    main()
+
